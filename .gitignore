@@ -1,0 +1,5 @@
+*.iml
+.idea
+venv
+avro-python3-1.8.1
+.DS_Store
