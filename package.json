@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "avsc": "^4.1.9"
+  }
+}
