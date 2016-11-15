@@ -8,7 +8,7 @@ from avro.io import DatumWriter
 from py_sample.item import Item
 
 
-def traverse(path: str, func):
+def traverse(path: str, func, producer=None):
     sp = path.split(sep='/')
     lp = len(sp)
     sch = avro.schema.Parse(open('../../message.avsc').read())
@@ -21,7 +21,10 @@ def traverse(path: str, func):
         prepare(dirs, writer, root)
         prepare(files, writer, root)
         writer.flush()
-        func(buf, level)
+        if producer is None:
+            func(buf, level)
+        else:
+            func(buf, level)
 
 
 def prepare(arr, writer, root):
