@@ -1,15 +1,12 @@
 import os
 import sys
 
-# from avro.datafile import DataFileReader
-# from avro.io import DatumReader
 from kafka import KafkaProducer
-from kafka.errors import KafkaError
 
 from py_sample.main.traverse import traverse
 
 producer = KafkaProducer(
-    bootstrap_servers='174.129.180.214:9092'
+    bootstrap_servers='localhost:9092'
 )
 l_created = []
 
